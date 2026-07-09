@@ -27,7 +27,28 @@ function loadGame(game){
 
 
 
+function Winner(){
+    const cells=document.querySelectorAll(".cell");
+    const combos=[
+        [0,1,2],[3,4,5],[6,7,8], 
+        [0,3,6],[1,4,7],[2,5,8], 
+        [0,4,8],[2,4,6]
+    ];
 
+    for (let combo of combos){
+        const[a,b,c]=combo;
+
+        if (
+            cells[a].innerText &&
+            cells[a].innerText === cells[b].innerText &&
+            cells[a].innerText === cells[c].innerText
+        ){
+            alert(cells[a].innerText + " Wins!");
+            return true;
+        }
+    }
+    return false;
+}
 
 
 function Turn(cell){
@@ -36,6 +57,10 @@ function Turn(cell){
     }
 
     cell.innerText=current;
+
+    if (Winner()){
+        return;
+    }
 
     if (current==='X'){
         current='O';
