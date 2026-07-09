@@ -1,3 +1,5 @@
+let current='X';
+
 function loadGame(game){
     const area = document.getElementById("game-area");
 
@@ -13,7 +15,7 @@ function loadGame(game){
         <div class="cell" onclick="Turn(this)"></div>
         <div class="cell" onclick="Turn(this)"></div>
         <div class="cell" onclick="Turn(this)"></div>
-        <div class="cell" onclick="Turn(this)"></div>`;
+        <div class="cell" onclick="Turn(this)"></div></div>`;
     }
     else if (game == "snake") {
         area.innerHTML="<h2>Snake coming soon</h2>";
@@ -24,6 +26,21 @@ function loadGame(game){
 }
 
 
-function Turn(cell) {
-    cell.innerText = "X";
+
+
+
+
+function Turn(cell){
+    if (cell.innerText !== ""){
+        return;
+    }
+
+    cell.innerText=current;
+
+    if (current==='X'){
+        current='O';
+    }
+    else{
+        current='X'
+    }
 }
