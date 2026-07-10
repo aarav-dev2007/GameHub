@@ -48,11 +48,17 @@ function Winner(){
     for (let combo of combos){
         const[a,b,c]=combo;
 
+        
         if (
             cells[a].innerText &&
             cells[a].innerText === cells[b].innerText &&
             cells[a].innerText === cells[c].innerText
-        ){
+        ){  
+            cells[a].style.backgroundColor='turquoise';
+            cells[b].style.backgroundColor='turquoise';
+            cells[c].style.backgroundColor='turquoise';
+
+
             status.innerText = cells[a].innerText + " Wins!";
             return true;
         }
@@ -84,6 +90,9 @@ function Turn(cell){
     else{
         current='X'
     }
+
+    const status=document.getElementById("status");
+    status.innerText=current + "'s Turn";
 }
 
 function restart(){
@@ -91,6 +100,7 @@ function restart(){
     const status= document.getElementById("status");
 
     for (let i=0; i<cells.length; i= i+1){
+        cells[i].style.backgroundColor = "#1f1f1f";
         cells[i].innerText='';
     }
 
