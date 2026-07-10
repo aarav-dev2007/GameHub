@@ -41,3 +41,10 @@ button{
     font-size: 2rem;
     cursor: pointer;
 }
+
+.restart-btn{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
