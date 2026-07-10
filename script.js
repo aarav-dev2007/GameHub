@@ -1,6 +1,49 @@
 let current='X';
 let end=false;
+let mode='pvp';
 
+function start(chosen){
+    mode= chosen;
+    loadGame('tictactoe');
+}
+
+
+function cpuMove(){
+    const cells = document.querySelectorAll(".cell");
+    const combos=[
+        [0,1,2],[3,4,5],[6,7,8], 
+        [0,3,6],[1,4,7],[2,5,8], 
+        [0,4,8],[2,4,6]
+    ];
+
+    for (let combo of combos){
+        const[a,b,c]=combo;
+        
+        if(
+            (cells[a].innerText==='X' && cells[b].innerText==='X' && cells[c].innerText==='') ||
+            (cells[a].innerText==='X' && cells[b].innerText==='' && cells[c].innerText==='X') ||
+            (cells[a].innerText==='' && cells[b].innerText==='X' && cells[c].innerText==='X')
+        ){
+            if (cells[a].innerText==='') return Turn(cells[a]);
+            if (cells[b].innerText==='') return Turn(cells[b]);
+            if (cells[c].innerText==='') return Turn(cells[c]);
+        }
+    }
+
+    let empty=[];
+    for (let i=0;i<cells.length;i++){
+        if (cells[i].innerText===""){
+            empty.push(cells[i]);
+        }
+    }
+    if (empty.length===0){
+        return;}
+    let randomIndex = Math.floor(Math.random() * empty.length);
+    let chosenCell = empty[randomIndex];
+
+    Turn(chosenCell);
+    
+}
 
 function loadGame(game){
     end=false;
@@ -109,6 +152,10 @@ function Turn(cell){
 
     const status=document.getElementById("status");
     status.innerText=current + "'s Turn";
+
+    if(mode === "cpu" && current==='O' && !end){
+        cpuMove();
+    }
 }
 
 function restart(){
