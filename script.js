@@ -84,6 +84,22 @@ function Turn(cell){
         return;
     }
 
+    const cells=document.querySelectorAll(".cell");
+    let fill=true;
+    for (let i = 0; i<cells.length; i++){
+        if (cells[i].innerText === ""){
+            fill=false;
+            break;
+        }
+    }
+
+    if (fill){
+        const status=document.getElementById("status");
+        status.innerText="It's a Draw!";
+        end=true;
+        return;
+    }
+
     if (current==='X'){
         current='O';
     }
