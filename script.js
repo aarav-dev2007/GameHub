@@ -97,9 +97,9 @@ function Winner(){
             cells[a].innerText === cells[b].innerText &&
             cells[a].innerText === cells[c].innerText
         ){  
-            cells[a].style.backgroundColor='turquoise';
-            cells[b].style.backgroundColor='turquoise';
-            cells[c].style.backgroundColor='turquoise';
+            cells[a].style.backgroundColor='rgba(20, 255, 200, 0.6)';
+            cells[b].style.backgroundColor='rgba(20, 255, 200, 0.6)';
+            cells[c].style.backgroundColor='rgba(20, 255, 200, 0.6)';
 
 
             status.innerText = cells[a].innerText + " Wins!";
@@ -121,6 +121,13 @@ function Turn(cell){
     }
 
     cell.innerText=current;
+
+    if (current === 'X'){
+        cell.style.color = "#6a4c93";
+    }
+    else{
+        cell.style.color = "#e76f51";
+    }
 
     if (Winner()){
         end=true;
@@ -163,7 +170,7 @@ function restart(){
     const status= document.getElementById("status");
 
     for (let i=0; i<cells.length; i= i+1){
-        cells[i].style.backgroundColor = "#1f1f1f";
+        cells[i].style.backgroundColor =" rgba(255,255,255,0.6)";
         cells[i].innerText='';
     }
 
