@@ -16,7 +16,22 @@ function cpuMove(){
         [0,4,8],[2,4,6]
     ];
 
-    for (let combo of combos){
+
+        for (let combo of combos){
+            const[a,b,c]=combo;
+
+            if(
+                (cells[a].innerText==='O' && cells[b].innerText==='O' && cells[c].innerText==='') ||
+        (cells[a].innerText==='O' && cells[b].innerText==='' && cells[c].innerText==='O') ||
+        (cells[a].innerText==='' && cells[b].innerText==='O' && cells[c].innerText==='O')
+        ){
+            if (cells[a].innerText==='') return Turn(cells[a]);
+        if (cells[b].innerText==='') return Turn(cells[b]);
+        if (cells[c].innerText==='') return Turn(cells[c]);
+        }
+        }
+
+        for (let combo of combos){
         const[a,b,c]=combo;
         
         if(
