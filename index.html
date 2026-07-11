@@ -7,8 +7,12 @@
 
 <body>
     <h1>🎮 GameHub</h1>
-    <button onclick="start('pvp')">Tic Tac Toe (PvP)</button>
-    <button onclick="start('cpu')">Tic Tac Toe (Vs Computer)</button>
+    <div id="navbar">
+        <button onclick="menu('tictactoe')">Tic Tac Toe</button>
+        <button onclick="loadGame('rps')">Rock Paper Scissors</button>
+        <button onclick="loadGame('snake')">Snake</button>
+    </div>
+    
     <div id="game-area"></div>
     <script src="script.js"></script>
 

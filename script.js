@@ -193,3 +193,14 @@ function restart(){
     end = false;
     status.innerText = "X's Turn";
 }
+
+function menu(game){
+    const area= document.getElementById("game-area");
+    
+    if (game === 'tictactoe'){
+        area.innerHTML=`
+        <h2>Tic Tac Toe</h2>
+        <button onclick="start('pvp')">Player vs Player</button>
+        <button onclick="start('cpu')">Vs Computer</button>`;
+    }
+}
