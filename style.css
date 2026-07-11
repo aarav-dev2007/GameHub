@@ -1,3 +1,7 @@
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
 body{
     background: linear-gradient(135deg, #cdb4db, #a2d2ff, #ffb4a2);
     color: #333;
@@ -69,7 +73,19 @@ button:hover{
 }
 
 #navbar button{
-    padding : 8px 16px;
+    padding : 12px 20px;
     font-size: 14px;
     border-radius: 20px;
+    transition: transform 0.6s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+#navbar button:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+#navbar button:active{
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
