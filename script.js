@@ -1,10 +1,36 @@
 let current='X';
 let end=false;
 let mode='pvp';
+let scores={
+    ttt: {X:0, O:0, draw:0},
+    rps: {player:0, cpu:0},
+    snake: {best:0}
+};
 
 function start(chosen){
     mode= chosen;
     loadGame('tictactoe');
+}
+
+
+function updatescores(game){
+    const scoreDiv = document.getElementById("scores");
+    if (game === 'tictactoe'){
+        scoreDiv.innerHTML=
+        "<p>X Wins: "+scores.ttt.X + "</p>"+
+        "<p>O Wins: "+scores.ttt.O + "</p>"+
+        "<p>Draws: "+scores.ttt.draw + "</p>";
+
+    }
+    else if (game==='rps'){
+        scoreDiv.innerHTML=
+        "<p>You: "+scores.rps.player + "</p>"+
+        "<p>Computer: "+scores.rps.cpu + "</p>";
+    }
+    else if (game==='snake'){
+        scoreDiv.innerHTML=
+        "<p>Best Score: " + scores.snake.best + "</p>";
+    }
 }
 
 
@@ -64,10 +90,15 @@ function loadGame(game){
     end=false;
     current='X';
     const area = document.getElementById("game-area");
+    document.getElementById("scorecard").classList.remove("hidden");
+    updatescores(game);
 
     if (game== "tictactoe") {
         area.innerHTML=`
         <h2>Tic Tac Toe</h2>
+        <div class="mode-select">
+            <button onclick="start('pvp')">Player vs Player</button>
+            <button onclick="start('cpu')">Vs Computer</button></div>
         <h3 id="status"></h3>
         <div id="board">
         <div class="cell" onclick="Turn(this)"></div>
@@ -116,8 +147,15 @@ function Winner(){
             cells[b].style.backgroundColor='rgba(20, 255, 200, 0.6)';
             cells[c].style.backgroundColor='rgba(20, 255, 200, 0.6)';
 
-
-            status.innerText = cells[a].innerText + " Wins!";
+            let winner=cells[a].innerText;
+            status.innerText = winner + " Wins!";
+            if (winner==='X'){
+                scores.ttt.X++;
+            }
+            else{
+                scores.ttt.O++;
+            }
+            updatescores("tictactoe");
             return true;
         }
     }
@@ -161,6 +199,8 @@ function Turn(cell){
     if (fill){
         const status=document.getElementById("status");
         status.innerText="It's a Draw!";
+        scores.ttt.draw++;
+        updatescores("tictactoe");
         end=true;
         return;
     }
@@ -196,7 +236,7 @@ function restart(){
 
 function menu(game){
     const area= document.getElementById("game-area");
-    
+    document.getElementById("scorecard").classList.add("hidden");
     if (game === 'tictactoe'){
         area.innerHTML=`
         <h2>Tic Tac Toe</h2>
