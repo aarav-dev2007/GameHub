@@ -215,7 +215,7 @@ function Winner(){
                     scores.ttt.pvp.X++;
                 }
                 else{
-                    scores.ttt.O++;
+                    scores.ttt.pvp.O++;
                 }}
             else if(mode==='cpu'){
                 if (winner==='X'){
@@ -270,7 +270,7 @@ function Turn(cell){
         const status=document.getElementById("status");
         status.innerText="It's a Draw!";
         if (mode==='pvp'){
-            scores.ttt.draw++;}
+            scores.ttt.pvp.draw++;}
         else{
             scores.ttt.cpu.draw++;
         }

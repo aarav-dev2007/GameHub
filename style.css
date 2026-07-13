@@ -161,3 +161,33 @@ button:hover{
     font-size: 40px;
     margin-top: 5px;
 }
+
+.sky{
+    position: relative;
+    height: 100vh;
+    
+}
+
+.cloud{
+    position: fixed;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.c1{
+    top:170px;
+    left: -200px;
+    width: 500px;
+}
+
+.c2{
+    top:550px;
+    left: 50px;
+    width: 800px;
+}
+
+.c3{
+    top: 350px;
+    right: -130px;
+    width: 400px;
+}
