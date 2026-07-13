@@ -128,10 +128,40 @@ function loadGame(game){
         area.innerHTML="<h2>Snake coming soon</h2>";
     }
     else if (game == 'rps') {
-        area.innerHTML="<h2>Rock Paper Scissors coming soon</h2>"
+        area.innerHTML=`
+        <h2>Rock Paper Scissors</h2>
+        <h3 id="rps-status">Choose your move</h3>
+        <div class="rps-buttons">
+            <button onclick="playRPS('rock')">Rock</button>
+            <button onclick="playRPS('paper')">Paper</button>
+            <button onclick="playRPS('scissors')">Scissors</button>
+        </div>`;
     }
 }
 
+
+function playRPS(playerChoice){
+    const choices=['rock','paper','scissors'];
+    const cpuChoice=choices[Math.floor(Math.random()*3)];
+    const status = document.getElementById("rps-status");
+
+    if (playerChoice===cpuChoice){
+        status.innerText="Draw! Both chose "+playerChoice;
+    }
+    else if(
+        (playerChoice==='rock' && cpuChoice==='scissors')||
+        (playerChoice==='paper' && cpuChoice==='rock')||
+        (playerChoice==='scissors' && cpuChoice==='paper')
+    ){
+        status.innerText='You Win! CPU chose ' + cpuChoice;
+        scores.rps.player++;
+    }
+    else{
+        status.innerText='You Lose! CPU Chose '+ cpuChoice;
+        scores.rps.cpu++;
+    }
+    updatescores('rps');
+}
 
 
 function Winner(){
