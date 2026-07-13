@@ -135,7 +135,18 @@ function loadGame(game){
             <button onclick="playRPS('rock')">Rock</button>
             <button onclick="playRPS('paper')">Paper</button>
             <button onclick="playRPS('scissors')">Scissors</button>
-        </div>`;
+        </div>
+
+        <div class = 'rps-display'>
+            <div class='box'>
+                <p>You</p>
+                <div id='player-move' class='move-box'>?</div>
+            </div>
+            <div class='box'>
+                <p>CPU</p>
+                <div id='cpu-move' class='move-box'>?</div>
+            </div>
+        </div>`
     }
 }
 
@@ -144,6 +155,17 @@ function playRPS(playerChoice){
     const choices=['rock','paper','scissors'];
     const cpuChoice=choices[Math.floor(Math.random()*3)];
     const status = document.getElementById("rps-status");
+
+    const icons = {
+        rock: "🪨",
+        paper: "📄",
+        scissors: "✂️"
+    };
+
+    const playerBox=document.getElementById("player-move");
+    const cpuBox=document.getElementById("cpu-move");
+    playerBox.innerText=icons[playerChoice];
+    cpuBox.innerText=icons[cpuChoice];
 
     if (playerChoice===cpuChoice){
         status.innerText="Draw! Both chose "+playerChoice;
