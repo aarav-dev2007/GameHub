@@ -2,7 +2,10 @@ let current='X';
 let end=false;
 let mode='pvp';
 let scores={
-    ttt: {X:0, O:0, draw:0},
+    ttt: {
+        pvp: {X:0, O:0, draw:0},
+        cpu: {player:0, cpu:0, draw:0}
+    },
     rps: {player:0, cpu:0},
     snake: {best:0}
 };
@@ -16,11 +19,17 @@ function start(chosen){
 function updatescores(game){
     const scoreDiv = document.getElementById("scores");
     if (game === 'tictactoe'){
-        scoreDiv.innerHTML=
-        "<p>X Wins: "+scores.ttt.X + "</p>"+
-        "<p>O Wins: "+scores.ttt.O + "</p>"+
-        "<p>Draws: "+scores.ttt.draw + "</p>";
-
+        if (mode==='pvp'){
+            scoreDiv.innerHTML=
+            "<p>X Wins: "+scores.ttt.pvp.X + "</p>"+
+            "<p>O Wins: "+scores.ttt.pvp.O + "</p>"+
+            "<p>Draws: "+scores.ttt.pvp.draw + "</p>";}
+        else if (mode==='cpu'){
+            scoreDiv.innerHTML=
+            "<p>You: "+scores.ttt.cpu.player + "</p>"+
+            "<p>Computer: "+scores.ttt.cpu.cpu + "</p>"+
+            "<p>Draws: "+scores.ttt.cpu.draw + "</p>";
+        }
     }
     else if (game==='rps'){
         scoreDiv.innerHTML=
@@ -149,11 +158,20 @@ function Winner(){
 
             let winner=cells[a].innerText;
             status.innerText = winner + " Wins!";
-            if (winner==='X'){
-                scores.ttt.X++;
-            }
-            else{
-                scores.ttt.O++;
+            if (mode==='pvp'){
+                if (winner==='X'){
+                    scores.ttt.pvp.X++;
+                }
+                else{
+                    scores.ttt.O++;
+                }}
+            else if(mode==='cpu'){
+                if (winner==='X'){
+                    scores.ttt.cpu.player++;
+                }
+                else{
+                    scores.ttt.cpu.cpu++;
+                }
             }
             updatescores("tictactoe");
             return true;
@@ -199,7 +217,11 @@ function Turn(cell){
     if (fill){
         const status=document.getElementById("status");
         status.innerText="It's a Draw!";
-        scores.ttt.draw++;
+        if (mode==='pvp'){
+            scores.ttt.draw++;}
+        else{
+            scores.ttt.cpu.draw++;
+        }
         updatescores("tictactoe");
         end=true;
         return;
