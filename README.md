@@ -48,6 +48,9 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 - Click “Start”
 - Wait for the color change
 - Click as fast as possible
+<img width="1131" height="792" alt="image" src="https://github.com/user-attachments/assets/953c81d5-0b7b-4ab8-a9ba-4098a197cb12" /><img width="1051" height="800" alt="image" src="https://github.com/user-attachments/assets/f81ec8f4-7bd0-4012-b257-ca4d56f0911e" />
+
+
 
 ### Tic Tac Toe
 - Two players take turns
