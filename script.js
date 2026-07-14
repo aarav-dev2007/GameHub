@@ -1,4 +1,7 @@
 let current='X';
+let startTime=0;
+let timeout=null;
+let waiting = false;
 let end=false;
 let mode='pvp';
 let scores={
@@ -7,8 +10,25 @@ let scores={
         cpu: {player:0, cpu:0, draw:0}
     },
     rps: {player:0, cpu:0},
-    snake: {best:0}
+    reaction: {best:null}
 };
+
+
+function startReaction(){
+    const box=document.getElementById("reaction-box");
+    box.innerText='Wait...';
+    box.style.backgroundColor='#f4a261';
+    waiting = true;
+    timeout=setTimeout(function(){
+        box.innerText='CLICK!';
+        box.style.backgorundColor='green';
+        startTime=Date.now();
+        waiting=false;
+    }, Math.random()*2000 + 1000);
+    
+}
+
+
 
 function start(chosen){
     mode= chosen;
@@ -36,9 +56,13 @@ function updatescores(game){
         "<p>You: "+scores.rps.player + "</p>"+
         "<p>Computer: "+scores.rps.cpu + "</p>";
     }
-    else if (game==='snake'){
-        scoreDiv.innerHTML=
-        "<p>Best Score: " + scores.snake.best + "</p>";
+    else if (game==='reaction'){
+        let best=scores.reaction.best;
+        if (best===null){
+            scoreDiv.innerHTML='<p>Best Time: --</p>';
+        }else{
+            scoreDiv.innerHTML='<p>Best Time: '+best+' ms</p>'
+        }
     }
 }
 
@@ -102,7 +126,7 @@ function loadGame(game){
     document.getElementById("scorecard").classList.remove("hidden");
     updatescores(game);
 
-    if (game== "tictactoe") {
+    if (game=== "tictactoe") {
         area.innerHTML=`
         <h2>Tic Tac Toe</h2>
         <div class="mode-select">
@@ -124,10 +148,14 @@ function loadGame(game){
         Restart</button>`;
         document.getElementById("status").innerText="X's Turn";
     }
-    else if (game == "snake") {
-        area.innerHTML="<h2>Snake coming soon</h2>";
+    else if (game === "reaction") {
+        area.innerHTML=`
+        <h2>Reaction Time Tester</h2>
+        <div id="reaction-box">Click Start</div>
+        <button onclick='startReaction()'>Start</button>`;
+        updatescores('reaction');
     }
-    else if (game == 'rps') {
+    else if (game === 'rps') {
         area.innerHTML=`
         <h2>Rock Paper Scissors</h2>
         <h3 id="rps-status">Choose your move</h3>
