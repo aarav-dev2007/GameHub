@@ -21,11 +21,10 @@ function startReaction(){
     waiting = true;
     timeout=setTimeout(function(){
         box.innerText='CLICK!';
-        box.style.backgorundColor='green';
+        box.style.backgroundColor='green';
         startTime=Date.now();
         waiting=false;
     }, Math.random()*2000 + 1000);
-    
 }
 
 
@@ -346,3 +345,27 @@ function menu(game){
         <button onclick="start('cpu')">Vs Computer</button>`;
     }
 }
+
+
+document.addEventListener('click',function(e){
+    let box=document.getElementById("reaction-box");
+    if (!box) return;
+    if (e.target!== box) return;
+
+    if (waiting){
+        clearTimeout(timeout);
+        box.innerText='Too Soon!';
+        box.style.backgroundColor='red';
+        waiting = false;
+        return;
+    }
+
+    if (box.innerText==='CLICK!'){
+        let time=Date.now() - startTime;
+        box.innerText= time + 'ms';
+        if (scores.reaction.best=== null || time<scores.reaction.best){
+            scores.reaction.best=time;
+        }
+        updatescores('reaction');
+    }
+});
