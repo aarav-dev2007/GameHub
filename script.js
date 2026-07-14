@@ -17,11 +17,11 @@ let scores={
 function startReaction(){
     const box=document.getElementById("reaction-box");
     box.innerText='Wait...';
-    box.style.backgroundColor='#f4a261';
+    box.style.backgroundColor='rgba(255,180,162,0.75)';
     waiting = true;
     timeout=setTimeout(function(){
         box.innerText='CLICK!';
-        box.style.backgroundColor='green';
+        box.style.backgroundColor='rgba(180, 255, 220, 0.7)';
         startTime=Date.now();
         waiting=false;
     }, Math.random()*2000 + 1000);
@@ -355,7 +355,7 @@ document.addEventListener('click',function(e){
     if (waiting){
         clearTimeout(timeout);
         box.innerText='Too Soon!';
-        box.style.backgroundColor='red';
+        box.style.backgroundColor='rgba(255,140,140,0.75)';
         waiting = false;
         return;
     }
