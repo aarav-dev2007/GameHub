@@ -6,24 +6,24 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 👉 https://aarav-dev2007.github.io/GameHub/
 
 ---
 
-## 📌 Features
+## Features
 
-- 🎯 Reaction Time Test — test how fast you can click
-- ❌⭕ Tic Tac Toe — classic 2-player game
-- ✊✋✌️ Rock Paper Scissors — play against the computer
-- 🎨 Clean pastel UI with smooth layout
-- 📱 Responsive design (works on desktop & mobile)
-- ⚡ Fast and lightweight (no frameworks)
+- Reaction Time Test — test how fast you can click
+- Tic Tac Toe — classic 2-player game
+- Rock Paper Scissors — play against the computer
+- Clean pastel UI with smooth layout
+- Responsive design (works on desktop & mobile)
+- Fast and lightweight (no frameworks)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - HTML5
 - CSS3
@@ -31,7 +31,7 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 ---
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 1. Clone the repository: https://github.com/aarav-dev2007/gamehub.git
 
@@ -42,7 +42,7 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 ---
 
-## 🎮 How to Play
+## How to Play
 
 ### Reaction Time Test
 - Click “Start”
@@ -60,7 +60,7 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 ---
 
-## 👤 Author
+## Author
 
 **Aarav**
 
