@@ -55,11 +55,14 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 ### Tic Tac Toe
 - Two players take turns
 - First to align 3 marks wins
+<img width="1091" height="947" alt="image" src="https://github.com/user-attachments/assets/4b857975-7196-4e75-97ac-e0b444fa4b23" />
+
 
 ### Rock Paper Scissors
 - Choose your move
 - Computer randomly selects its move
 - Result is displayed instantly
+<img width="928" height="822" alt="image" src="https://github.com/user-attachments/assets/e94ab118-a9a5-4cf5-8779-774c147abd4f" />
 
 ---
 
