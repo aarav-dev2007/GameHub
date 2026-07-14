@@ -1,18 +1,67 @@
-# GameHub 🎮
+# 🎮 GameHub
 
-A browser-based multi-game hub built with HTML, CSS, and JavaScript.
+A simple and interactive browser-based mini game collection built using HTML, CSS, and JavaScript.
 
-## Features
-- Tic Tac Toe
-- Snake
-- Rock Paper Scissors
-- Dark themed UI
-- Local score tracking
+GameHub brings together multiple fun games in one place with a clean and modern UI.
 
-## Tech Stack
-- HTML
-- CSS
-- JavaScript
+---
 
-## Status
-🚧 Work in progress
+## 🚀 Live Demo
+
+👉 https://aarav-dev2007.github.io/gamehub/
+
+---
+
+## 📌 Features
+
+- 🎯 Reaction Time Test — test how fast you can click
+- ❌⭕ Tic Tac Toe — classic 2-player game
+- ✊✋✌️ Rock Paper Scissors — play against the computer
+- 🎨 Clean pastel UI with smooth layout
+- 📱 Responsive design (works on desktop & mobile)
+- ⚡ Fast and lightweight (no frameworks)
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+
+---
+
+## ⚙️ How to Run Locally
+
+1. Clone the repository: https://github.com/aarav-dev2007/gamehub.git
+
+2. Open the project folder
+
+3. Run:
+- Open `index.html` in your browser
+
+---
+
+## 🎮 How to Play
+
+### Reaction Time Test
+- Click “Start”
+- Wait for the color change
+- Click as fast as possible
+
+### Tic Tac Toe
+- Two players take turns
+- First to align 3 marks wins
+
+### Rock Paper Scissors
+- Choose your move
+- Computer randomly selects its move
+- Result is displayed instantly
+
+---
+
+## 👤 Author
+
+**Aarav**
+
+GitHub: https://github.com/aarav-dev2007
