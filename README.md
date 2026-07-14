@@ -1,3 +1,5 @@
+<img width="1920" height="1080" alt="Game Hub" src="https://github.com/user-attachments/assets/f530d1a1-3ba1-4ba3-bff1-13ceabfdd064" />
+
 # 🎮 GameHub
 
 A simple and interactive browser-based mini game collection built using HTML, CSS, and JavaScript.
