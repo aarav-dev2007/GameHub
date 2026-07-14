@@ -368,4 +368,7 @@ document.addEventListener('click',function(e){
         }
         updatescores('reaction');
     }
+    else{
+        startReaction();
+    }
 });

@@ -106,9 +106,6 @@ button:hover{
 
     border: 2px dashed rgba(0,0,0,0.08);
     font-family: "Segoe UI", sans-serif;
-
-    width: 180px;
-    padding: 15px;
 }
 
 
@@ -120,7 +117,6 @@ button:hover{
     padding: 5px;
     border-radius: 6px;
 }
-
 
 #main-container{
     display: flex;
@@ -187,7 +183,6 @@ button:hover{
     width: 400px;
 }
 
-
 #reaction-box{
     width: 350px;
     height: 250px;
@@ -198,4 +193,10 @@ button:hover{
     margin: 0 auto;
     background-color: rgba(255,255,255,0.6);
     border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+#reaction-box:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
