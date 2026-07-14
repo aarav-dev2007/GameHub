@@ -8,7 +8,7 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 ## 🚀 Live Demo
 
-👉 https://aarav-dev2007.github.io/gamehub/
+👉 https://aarav-dev2007.github.io/GameHub/
 
 ---
 
