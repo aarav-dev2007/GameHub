@@ -1,10 +1,10 @@
 <img width="1920" height="1080" alt="Game Hub" src="https://github.com/user-attachments/assets/f530d1a1-3ba1-4ba3-bff1-13ceabfdd064" />
 
-# 🎮 GameHub
+# GameHub
 
-A simple and interactive browser-based mini game collection built using HTML, CSS, and JavaScript.
+GameHub is a small collection of browser-based games built using HTML, CSS, and JavaScript.
 
-GameHub brings together multiple fun games in one place with a clean and modern UI.
+I made this project to practice how games work in JavaScript & CSS, after already building in Python (previous projects). 
 
 ---
 
@@ -18,18 +18,17 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 - Reaction Time Test — test how fast you can click
 - Tic Tac Toe — classic 2-player game
-- Rock Paper Scissors — play against the computer
+- Rock Paper Scissors — play against the computer or bring up a partner to play against!
 - Clean pastel UI with smooth layout
 - Responsive design (works on desktop & mobile)
-- Fast and lightweight (no frameworks)
 
 ---
 
 ## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
+- HTML
+- CSS
+- JavaScript
 
 ---
 
@@ -39,8 +38,7 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 2. Open the project folder
 
-3. Run:
-- Open `index.html` in your browser
+3. Open `index.html` in your browser
 
 ---
 
@@ -55,8 +53,8 @@ GameHub brings together multiple fun games in one place with a clean and modern 
 
 
 ### Tic Tac Toe
-- Two players take turns
-- First to align 3 marks wins
+- Choose from PvP or Computer mode
+- Play against your opponent (according to the initial game mode chosen) and get your marker 3 in a row first to win
 <img width="1091" height="947" alt="image" src="https://github.com/user-attachments/assets/4b857975-7196-4e75-97ac-e0b444fa4b23" />
 
 
